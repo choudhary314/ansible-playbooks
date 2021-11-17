@@ -1,0 +1,9 @@
+# apt-updates
+---
+  - hosts: webservers:loadbalancers
+    become: true
+    tasks:
+      - name: Update packages
+        apt:
+          name: "*"
+          state: latest
